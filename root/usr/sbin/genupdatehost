@@ -5,7 +5,6 @@ if [ "$OLD_HOSTNAME" == "changeit" ]; then
     PATH_TO_GENHOST=/usr/sbin/genhost
     NEW_HOSTNAME=`$PATH_TO_GENHOST 1`
     echo $NEW_HOSTNAME > /etc/hostname
-    if [ "$1" == "-r" ]; then
-        reboot
-    fi
+    hostname $NEW_HOSTNAME
+    /etc/init.d/networking restart
 fi
