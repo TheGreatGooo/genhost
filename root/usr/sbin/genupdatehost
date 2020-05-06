@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+OLD_HOSTNAME=`cat /etc/hostname`
+if [ "$OLD_HOSTNAME" == "changeit" ]; then
+    PATH_TO_GENHOST=/usr/sbin/genhost
+    NEW_HOSTNAME=`$PATH_TO_GENHOST 1`
+    echo $NEW_HOSTNAME > /etc/hostname
+    if [ "$1" == "-r" ]; then
+        reboot
+    fi
+fi
