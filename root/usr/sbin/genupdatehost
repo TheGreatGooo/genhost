@@ -3,7 +3,7 @@
 OLD_HOSTNAME=`cat /etc/hostname`
 if [ "$OLD_HOSTNAME" == "changeit" ]; then
     PATH_TO_GENHOST=/usr/sbin/genhost
-    export GENHOST_DOMAIN=`dnsdomainname`
+    export GENHOST_DOMAIN=`cat /etc/genhost/domainname`
     NEW_HOSTNAME=`$PATH_TO_GENHOST 1`
     echo $NEW_HOSTNAME > /etc/hostname
     hostname $NEW_HOSTNAME
