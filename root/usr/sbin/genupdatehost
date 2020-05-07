@@ -7,5 +7,5 @@ if [ "$OLD_HOSTNAME" == "changeit" ]; then
     NEW_HOSTNAME=`$PATH_TO_GENHOST 1`
     echo $NEW_HOSTNAME > /etc/hostname
     hostname $NEW_HOSTNAME
-    /etc/init.d/networking restart
+    reboot
 fi
