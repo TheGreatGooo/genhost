@@ -1,1 +1,1 @@
-@reboot /usr/sbin/genupdatehost
+@reboot root /usr/sbin/genupdatehost
