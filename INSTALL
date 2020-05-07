@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-mv /etc/genhost/domainname /etc/genhost/domainname.bak
+mv /etc/genhost/domainname /etc/genhost/domainname.bak 2> /dev/null
 cp -rf root/* /
-mv /etc/genhost/domainname.bak /etc/genhost/domainname
+mv /etc/genhost/domainname.bak /etc/genhost/domainname 2> /dev/null
